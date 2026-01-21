@@ -9,37 +9,98 @@
 
 <header>
     <h1>Mercearia Pereira Mix</h1>
-    <p>Qualidade e preço justo perto de você</p>
+    <p>Tudo o que você precisa em um só lugar</p>
 </header>
 
 <main>
-    <section class="produtos">
-        <h2>Produtos</h2>
+
+    <!-- HIGIENE -->
+    <section class="categoria">
+        <h2>🧼 Higiene</h2>
+
+        <div class="produto">
+            <h3>Sabonete</h3>
+            <p>R$ 3,00</p>
+            <button onclick="comprar('Sabonete', 3)">Comprar</button>
+        </div>
+
+        <div class="produto">
+            <h3>Pasta de dente</h3>
+            <p>R$ 6,50</p>
+            <button onclick="comprar('Pasta de dente', 6.5)">Comprar</button>
+        </div>
+    </section>
+
+    <!-- MERCEARIA -->
+    <section class="categoria">
+        <h2>🛒 Mercearia</h2>
 
         <div class="produto">
             <h3>Arroz 5kg</h3>
-            <p>Preço: R$ 26,00</p>
-            <button onclick="comprar('Arroz 5kg', 26)">Comprar</button>
+            <p>R$ 25,00</p>
+            <button onclick="comprar('Arroz 5kg', 25)">Comprar</button>
         </div>
 
         <div class="produto">
             <h3>Feijão 1kg</h3>
-            <p>Preço: R$ 8,50</p>
-            <button onclick="comprar('Feijão 1kg', 8.50)">Comprar</button>
+            <p>R$ 8,00</p>
+            <button onclick="comprar('Feijão 1kg', 8)">Comprar</button>
+        </div>
+    </section>
+
+    <!-- BEBIDAS ALCOÓLICAS -->
+    <section class="categoria">
+        <h2>🍺 Bebidas Alcoólicas</h2>
+
+        <div class="produto">
+            <h3>Cerveja Brahma 269ml</h3>
+            <p>R$ 4,00 (unidade)</p>
+            <button onclick="comprar('Cerveja Brahma 269ml', 4)">Comprar</button>
         </div>
 
         <div class="produto">
-            <h3>Óleo de Soja</h3>
-            <p>Preço: R$ 12,00</p>
-            <button onclick="comprar('Óleo de Soja', 12)">Comprar</button>
+            <h3>Cerveja Skol 269ml</h3>
+            <p>R$ 4,00 (unidade)</p>
+            <button onclick="comprar('Cerveja Skol 269ml', 4)">Comprar</button>
+        </div>
+
+        <div class="produto">
+            <h3>Cerveja Antarctica 269ml</h3>
+            <p>R$ 4,00 (unidade)</p>
+            <button onclick="comprar('Cerveja Antarctica 269ml', 4)">Comprar</button>
+        </div>
+
+        <div class="produto">
+            <h3>Cerveja Amstel 269ml</h3>
+            <p>R$ 4,00 (unidade)</p>
+            <button onclick="comprar('Cerveja Amstel 269ml', 4)">Comprar</button>
+        </div>
+
+        <div class="produto">
+            <h3>Brahma Chopp 269ml</h3>
+            <p>R$ 4,00 (unidade)</p>
+            <button onclick="comprar('Brahma Chopp 269ml', 4)">Comprar</button>
         </div>
     </section>
 
+    <!-- AGROPECUÁRIA -->
+    <section class="categoria">
+        <h2>🌾 Agropecuária</h2>
+
+        <div class="produto">
+            <h3>Ração Bomguy 25kg</h3>
+            <p>R$ 145,00</p>
+            <button onclick="comprar('Ração Bomguy 25kg', 145)">Comprar</button>
+        </div>
+    </section>
+
+    <!-- CARRINHO -->
     <section class="carrinho">
-        <h2>Carrinho</h2>
+        <h2>🧾 Carrinho</h2>
         <ul id="listaCarrinho"></ul>
         <p>Total: R$ <span id="total">0.00</span></p>
     </section>
+
 </main>
 
 <footer>
@@ -48,4 +109,4 @@
 
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
