@@ -1,145 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Mercearia Pereira Mix</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercearia Pereira Mix</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f2f2f2;
+}
+
+/* TOPO */
+header{
+  background:linear-gradient(135deg,#ff9800,#ff6f00);
+  color:#fff;
+  text-align:center;
+  padding:25px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:26px;
+}
+
+header p{
+  margin-top:8px;
+  font-size:14px;
+}
+
+/* CATEGORIAS */
+.categoria{
+  background:#fff;
+  margin:15px;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.categoria h2{
+  margin:0;
+  margin-bottom:15px;
+  color:#ff6f00;
+  border-left:5px solid #ff6f00;
+  padding-left:10px;
+}
+
+/* PRODUTOS */
+.produtos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
+
+.produto{
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+  background:#fff;
+}
+
+.produto h3{
+  font-size:15px;
+  margin:5px 0;
+}
+
+.preco{
+  font-weight:bold;
+  color:#333;
+  margin:8px 0;
+}
+
+/* BOTÃO */
+.btn{
+  background:#ff6f00;
+  color:#fff;
+  border:none;
+  padding:10px;
+  width:100%;
+  border-radius:8px;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#e65c00;
+}
+
+/* RODAPÉ */
+footer{
+  background:#ff6f00;
+  color:#fff;
+  text-align:center;
+  padding:18px 10px;
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Mercearia Pereira Mix</h1>
-    <p>Atendimento simples e rápido</p>
+  <h1>Mercearia Pereira Mix</h1>
+  <p>Tudo o que você precisa em um só lugar</p>
 </header>
 
-<main>
-
-    <!-- CADASTRO DE CLIENTES -->
-    <section class="cadastro">
-        <h2>👤 Cadastro de Cliente</h2>
-
-        <input type="text" id="nomeCliente" placeholder="Nome do cliente">
-        <input type="text" id="telefoneCliente" placeholder="Telefone">
-        <button onclick="cadastrarCliente()">Cadastrar</button>
-
-        <p id="clienteAtual"></p>
-    </section>
-
-    <!-- HIGIENE -->
-    <section class="categoria">
-        <h2>🧼 Higiene</h2>
-
-        <div class="produto">
-            <h3>Sabonete</h3>
-            <p>R$ 3,00</p>
-            <button onclick="comprar('Sabonete', 3)">Comprar</button>
-        </div>
-
-        <div class="produto">
-            <h3>Pasta de dente</h3>
-            <p>R$ 6,50</p>
-            <button onclick="comprar('Pasta de dente', 6.5)">Comprar</button>
-        </div>
-    </section>
-
-    <!-- BEBIDAS -->
-    <section class="categoria">
-        <h2>🍺 Bebidas Alcoólicas</h2>
-
-        <div class="produto">
-            <h3>Cerveja Brahma 269ml</h3>
-            <p>R$ 4,00</p>
-            <button onclick="comprar('Cerveja Brahma', 4)">Comprar</button>
-        </div>
-
-        <div class="produto">
-            <h3>Cerveja Skol 269ml</h3>
-            <p>R$ 4,00</p>
-            <button onclick="comprar('Cerveja Skol', 4)">Comprar</button>
-        </div>
-    </section>
-
-    <!-- AGROPECUÁRIA -->
-    <section class="categoria">
-        <h2>🌾 Agropecuária</h2>
-
-        <div class="produto">
-            <h3>Ração Bomguy 25kg</h3>
-            <p>R$ 145,00</p>
-            <button onclick="comprar('Ração Bomguy 25kg', 145)">Comprar</button>
-        </div>
-    </section>
-
-    <!-- CARRINHO -->
-    <section class="carrinho">
-        <h2>🧾 Carrinho</h2>
-        <ul id="listaCarrinho"></ul>
-        <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2026 - Mercearia Pereira Mix</p>
-</footer>
-
-<script src="script.js"></script>
-    <h1>Mercearia Pereira Mix</h1>
-<p style="text-align:center;">Tudo o que você precisa em um só lugar</p>
-
-<div class="categoria">
+<section class="categoria">
   <h2>🧼 Higiene</h2>
   <div class="produtos">
     <div class="produto">
       <h3>Sabonete</h3>
       <div class="preco">R$ 3,00</div>
-      <button class="btn-comprar">Comprar</button>
+      <button class="btn" onclick="comprar('Sabonete - R$ 3,00')">Comprar</button>
     </div>
 
     <div class="produto">
       <h3>Pasta de Dente</h3>
       <div class="preco">R$ 6,50</div>
-      <button class="btn-comprar">Comprar</button>
+      <button class="btn" onclick="comprar('Pasta de Dente - R$ 6,50')">Comprar</button>
     </div>
   </div>
-</div>
+</section>
 
-<div class="categoria">
+<section class="categoria">
   <h2>🛒 Mercearia</h2>
   <div class="produtos">
     <div class="produto">
       <h3>Arroz 5kg</h3>
       <div class="preco">R$ 25,00</div>
-      <button class="btn-comprar">Comprar</button>
+      <button class="btn" onclick="comprar('Arroz 5kg - R$ 25,00')">Comprar</button>
     </div>
 
     <div class="produto">
       <h3>Feijão 1kg</h3>
       <div class="preco">R$ 8,00</div>
-      <button class="btn-comprar">Comprar</button>
+      <button class="btn" onclick="comprar('Feijão 1kg - R$ 8,00')">Comprar</button>
     </div>
   </div>
-</div>
+</section>
 
-<div class="categoria">
+<section class="categoria">
   <h2>🍺 Bebidas Alcoólicas</h2>
   <div class="produtos">
     <div class="produto">
-      <h3>Cerveja Brahma 269ml</h3>
+      <h3>Brahma 269ml</h3>
       <div class="preco">R$ 4,00</div>
-      <button class="btn-comprar">Comprar</button>
+      <button class="btn" onclick="comprar('Brahma 269ml - R$ 4,00')">Comprar</button>
     </div>
 
     <div class="produto">
-      <h3>Cerveja Skol 269ml</h3>
+      <h3>Skol 269ml</h3>
       <div class="preco">R$ 4,00</div>
-      <button class="btn-comprar">Comprar</button>
+      <button class="btn" onclick="comprar('Skol 269ml - R$ 4,00')">Comprar</button>
     </div>
   </div>
-</div>
+</section>
 
-<div class="rodape">
-  💳 Pix: 52.332.223/0001-50 | 📞 Telefone: (61) 99878-6817
-</div>
+<footer>
+  💳 Pix: 52.332.223/0001-50 <br>
+  📞 WhatsApp: (61) 99878-6817
+</footer>
+
+<script>
+function comprar(produto){
+  let telefone = "5561998786817";
+  let mensagem = `Olá! Quero comprar: ${produto}`;
+  let url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, "_blank");
+}
+</script>
+
 </body>
 </html>
